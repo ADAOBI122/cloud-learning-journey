@@ -94,3 +94,37 @@ HTTP → port 80 → 0.0.0.0/0
 HTTPS → port 443 → 0.0.0.0/0
 
 
+6. Prepare the server
+
+Update it:
+
+sudo apt update
+
+Install git:
+
+sudo apt install git -y
+
+7. Bring your project into the server
+
+Now you want your GitHub project here.
+
+git clone https://github.com/YOUR_USERNAME/crontab-exercise.git
+
+Prepare /var/www/html
+
+Remove nginx default files:
+
+sudo rm -rf /var/www/html/*
+
+copy your project into /var/www/html/
+sudo cp -r ~/project-folder-name/* /var/www/html/
+
+/var/www/html/: is where the web server looks for file to serve to visitors .
+
+8. change permission make nginx the owner of the files.
+sudo chown -R www-data:www-data /var/www/html/
+
+sudo chmod -R 755   /var/www/html/
+
+9. Reload nginx so changes can apply .
+sudo systemctl reload nginx . 

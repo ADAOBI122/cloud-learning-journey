@@ -1,4 +1,7 @@
 #!/bin/bash
+
+cd "$(dirname "$0")"
+
 # setup_ec2_app.sh
 # Detailed setup for EC2 instance: updates, Git, Nginx and UFW
 
